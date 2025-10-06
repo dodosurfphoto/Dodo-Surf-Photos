@@ -42,81 +42,54 @@
     </div>
   </nav>
 
-  <!-- Home Page -->
+  <!-- Home -->
   <div id="home" class="page active">
     <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white pt-16">
       <div class="max-w-4xl mx-auto px-4">
         <h1 class="text-5xl md:text-7xl font-bold mb-6">Dodo Surf Photo</h1>
         <p class="text-xl md:text-2xl mb-8 opacity-90">Capturing your best moments on the waves</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onclick="showPage('gallery')" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold text-white">
-            View Gallery
-          </button>
-          <button onclick="showPage('getphoto')" class="btn-secondary bg-white text-cyan-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-white">
-            Get My Photo
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white py-16">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
-        <p class="text-gray-600 mb-8">Connect with us on social media for the latest surf shots and updates</p>
-        <div class="flex justify-center space-x-8">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center space-x-2 text-green-600 hover:text-green-700">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472..."/></svg>
-            <span class="font-medium">WhatsApp</span>
-          </a>
-          <a href="https://instagram.com/dodosurfphoto" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center space-x-2 text-pink-600 hover:text-pink-700">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017..."/></svg>
-            <span class="font-medium">Instagram</span>
-          </a>
+          <button onclick="showPage('gallery')" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold text-white">View Gallery</button>
+          <button onclick="showPage('getphoto')" class="btn-secondary bg-white text-cyan-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-white">Get My Photo</button>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Gallery Page -->
+  <!-- Gallery -->
   <div id="gallery" class="page pt-24 pb-16">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-gray-800 mb-4">Surf Photo Gallery</h1>
         <p class="text-gray-600 text-lg">Capturing the perfect wave, one shot at a time</p>
       </div>
-
       <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Filled automatically from API -->
+        <!-- Fetched from Google Drive automatically -->
       </div>
     </div>
   </div>
 
-  <!-- Get My Photo Page -->
+  <!-- Get My Photo -->
   <div id="getphoto" class="page pt-24 pb-16">
     <div class="max-w-2xl mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-gray-800 mb-4">Get My Photo</h1>
         <p class="text-gray-600 text-lg">Enter your photo code to download your surf shot.</p>
       </div>
-
       <div class="bg-white rounded-lg shadow-lg p-8">
         <form id="photoForm" class="space-y-6">
           <div>
             <label for="photoCode" class="block text-sm font-medium text-gray-700 mb-2">Photo ID Code</label>
             <input type="text" id="photoCode" name="photoCode" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-lg" placeholder="Enter your unique photo code" required>
           </div>
-          <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg text-white font-semibold text-lg">
-            Find My Photo
-          </button>
+          <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg text-white font-semibold text-lg">Find My Photo</button>
         </form>
 
         <div id="photoResult" class="mt-8 hidden">
           <div class="border-t pt-8 text-center">
             <h3 class="text-xl font-semibold text-gray-800 mb-2">Your Surf Photo Found!</h3>
             <p class="text-gray-600 mb-6">Photo ID: <span id="foundPhotoId" class="font-mono text-cyan-600"></span></p>
-            <button onclick="downloadPhoto()" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold">
-              📸 Download Photo
-            </button>
+            <button onclick="downloadPhoto()" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold">📸 Download Photo</button>
           </div>
         </div>
 
@@ -130,17 +103,78 @@
     </div>
   </div>
 
-  <!-- Contact Page -->
+  <!-- Contact -->
   <div id="contact" class="page pt-24 pb-16">
-    <!-- Konten contact kamu tetap sama -->
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Contact Us</h1>
+        <p class="text-gray-600 text-lg">Get in touch for bookings, questions, or just to say hello!</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">Reach Out</h2>
+          <div class="space-y-6">
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div class="bg-green-100 p-3 rounded-full">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472..."/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">WhatsApp</h3>
+                <p class="text-gray-600">Quick messages and photo sharing</p>
+              </div>
+            </a>
+
+            <a href="https://instagram.com/dodosurfphoto" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div class="bg-pink-100 p-3 rounded-full">
+                <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017..."/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Instagram</h3>
+                <p class="text-gray-600">@dodosurfphoto - Latest shots and stories</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">About Our Service</h2>
+          <div class="bg-white rounded-lg shadow-md p-6 space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="bg-cyan-100 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707..." clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-800">Professional Quality</h3>
+                <p class="text-gray-600 text-sm">High-resolution photos perfect for printing and sharing</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="bg-cyan-100 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707..." clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-800">Instant Download</h3>
+                <p class="text-gray-600 text-sm">Get your photos immediately with your unique code</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="bg-cyan-100 p-2 rounded-full mt-1">
+                <svg class="w-4 h-4 text-cyan-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707..." clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-800">Beach Coverage</h3>
+                <p class="text-gray-600 text-sm">We're at the best surf spots capturing your moments</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-300">
-        Dodo Surf Photo captures your best moments on the waves. Download your photo instantly with your unique code from the photographer.
-      </p>
+      <p class="text-gray-300">Dodo Surf Photo captures your best moments on the waves. Download your photo instantly with your unique code from the photographer.</p>
       <div class="mt-4 text-gray-400 text-sm">
         <p>&copy; 2025 Dodo Surf Photo. All rights reserved.</p>
       </div>
