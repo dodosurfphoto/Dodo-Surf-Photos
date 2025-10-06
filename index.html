@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodo Surf Photo - Professional Surf Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold text-cyan-600">🦤 Dodo Surf Photo</h1>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#" class="nav-link text-gray-700 hover:text-cyan-500 px-3 py-2 text-sm font-medium" onclick="showPage('home')">Home</a>
+            <a href="#" class="nav-link text-gray-700 hover:text-cyan-500 px-3 py-2 text-sm font-medium" onclick="showPage('gallery')">Gallery</a>
+            <a href="#" class="nav-link text-gray-700 hover:text-cyan-500 px-3 py-2 text-sm font-medium" onclick="showPage('getphoto')">Get My Photo</a>
+            <a href="#" class="nav-link text-gray-700 hover:text-cyan-500 px-3 py-2 text-sm font-medium" onclick="showPage('contact')">Contact</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-cyan-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-cyan-500" onclick="showPage('home'); toggleMobileMenu()">Home</a>
+        <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-cyan-500" onclick="showPage('gallery'); toggleMobileMenu()">Gallery</a>
+        <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-cyan-500" onclick="showPage('getphoto'); toggleMobileMenu()">Get My Photo</a>
+        <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-cyan-500" onclick="showPage('contact'); toggleMobileMenu()">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <div id="home" class="page active">
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white pt-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">Dodo Surf Photo</h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90">Capturing your best moments on the waves</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="showPage('gallery')" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold text-white">
+            View Gallery
+          </button>
+          <button onclick="showPage('getphoto')" class="btn-secondary bg-white text-cyan-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-white">
+            Get My Photo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
+        <p class="text-gray-600 mb-8">Connect with us on social media for the latest surf shots and updates</p>
+        <div class="flex justify-center space-x-8">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-green-600 hover:text-green-700">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472..."/></svg>
+            <span class="font-medium">WhatsApp</span>
+          </a>
+          <a href="https://instagram.com/dodosurfphoto" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-pink-600 hover:text-pink-700">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017..."/></svg>
+            <span class="font-medium">Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gallery Page -->
+  <div id="gallery" class="page pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Surf Photo Gallery</h1>
+        <p class="text-gray-600 text-lg">Capturing the perfect wave, one shot at a time</p>
+      </div>
+
+      <!-- Dynamic gallery container -->
+      <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Filled automatically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Get My Photo Page (unchanged) -->
+  <div id="getphoto" class="page pt-24 pb-16">
+    ... (semua bagian form kamu tetap sama seperti sebelumnya)
+  </div>
+
+  <!-- Contact Page (unchanged) -->
+  <div id="contact" class="page pt-24 pb-16">
+    ... (konten contact tetap sama)
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-300">
+        Dodo Surf Photo captures your best moments on the waves. Download your photo instantly with your unique code from the photographer.
+      </p>
+      <div class="mt-4 text-gray-400 text-sm">
+        <p>&copy; 2025 Dodo Surf Photo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
