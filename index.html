@@ -64,11 +64,11 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
         <p class="text-gray-600 mb-8">Connect with us on social media for the latest surf shots and updates</p>
         <div class="flex justify-center space-x-8">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-green-600 hover:text-green-700">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center space-x-2 text-green-600 hover:text-green-700">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472..."/></svg>
             <span class="font-medium">WhatsApp</span>
           </a>
-          <a href="https://instagram.com/dodosurfphoto" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-pink-600 hover:text-pink-700">
+          <a href="https://instagram.com/dodosurfphoto" target="_blank" rel="noopener noreferrer" class="social-icon flex items-center space-x-2 text-pink-600 hover:text-pink-700">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017..."/></svg>
             <span class="font-medium">Instagram</span>
           </a>
@@ -85,21 +85,54 @@
         <p class="text-gray-600 text-lg">Capturing the perfect wave, one shot at a time</p>
       </div>
 
-      <!-- Dynamic gallery container -->
       <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Filled automatically by script.js -->
+        <!-- Filled automatically from API -->
       </div>
     </div>
   </div>
 
-  <!-- Get My Photo Page (unchanged) -->
+  <!-- Get My Photo Page -->
   <div id="getphoto" class="page pt-24 pb-16">
-    ... (semua bagian form kamu tetap sama seperti sebelumnya)
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Get My Photo</h1>
+        <p class="text-gray-600 text-lg">Enter your photo code to download your surf shot.</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <form id="photoForm" class="space-y-6">
+          <div>
+            <label for="photoCode" class="block text-sm font-medium text-gray-700 mb-2">Photo ID Code</label>
+            <input type="text" id="photoCode" name="photoCode" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-lg" placeholder="Enter your unique photo code" required>
+          </div>
+          <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg text-white font-semibold text-lg">
+            Find My Photo
+          </button>
+        </form>
+
+        <div id="photoResult" class="mt-8 hidden">
+          <div class="border-t pt-8 text-center">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Your Surf Photo Found!</h3>
+            <p class="text-gray-600 mb-6">Photo ID: <span id="foundPhotoId" class="font-mono text-cyan-600"></span></p>
+            <button onclick="downloadPhoto()" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold">
+              📸 Download Photo
+            </button>
+          </div>
+        </div>
+
+        <div id="errorMessage" class="mt-6 hidden">
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4 flex">
+            <svg class="w-5 h-5 text-red-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0..." clip-rule="evenodd"/></svg>
+            <p class="ml-3 text-sm text-red-700">Photo code not found. Please check your code and try again, or contact us for assistance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Contact Page (unchanged) -->
+  <!-- Contact Page -->
   <div id="contact" class="page pt-24 pb-16">
-    ... (konten contact tetap sama)
+    <!-- Konten contact kamu tetap sama -->
   </div>
 
   <!-- Footer -->
